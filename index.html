@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cayla Jordan | Public Health Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #d96aa7;
+            --secondary: #f8d7e8;
+            --accent: #b84e8c;
+            --text: #333333;
+            --background: #fffafc;
+            --card: #ffffff;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--secondary), #ffffff);
+            padding: 60px 20px;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+        }
+
+        .photo-area {
+            flex: 0 0 220px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .initials-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 24px;
+            border-radius: 14px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background: var(--secondary);
+            color: var(--text);
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .portfolio-card h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .contact-links a {
+            color: var(--accent);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #f4f4f4;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.3rem;
+            }
+
+            .initials-circle {
+                width: 170px;
+                height: 170px;
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>Cayla Jordan</h1>
+                    <p>Public health student focused on occupational and environmental health.</p>
+                </div>
+
+                <div class="photo-area">
+                    <!-- Replace the line below with: <img src="photo.jpg" alt="Cayla Jordan" style="width:200px;height:200px;border-radius:50%;object-fit:cover;"> -->
+                    <div class="initials-circle">CJ</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="card">
+                <p>
+                    I am a Public Health student expected to graduate in 2028. I chose public health because I have always loved science and medicine, but I wanted to make a broader impact on the health and well-being of communities.
+                </p>
+                <br>
+                <p>
+                    The health issue I care most about is workplace safety because I have experienced workplace hazards in my field. These experiences have motivated me to learn more about protecting workers and promoting healthier work environments.
+                </p>
+                <br>
+                <p>
+                    My career goal is to work in occupational health, where I can help improve workplace conditions and support the safety and health of workers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <div class="skill">Communication</div>
+                <div class="skill">Research</div>
+                <div class="skill">Public Speaking</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>PH 320 Portfolio — Applied Biostatistics in Public Health, York College CUNY</h2>
+
+            <div class="portfolio-grid">
+
+                <!-- Add Week 3 project link inside this card later -->
+                <div class="portfolio-card">
+                    <h3>Week 3</h3>
+                    <p>Coming soon.</p>
+                </div>
+
+                <!-- Add Week 4 project link inside this card later -->
+                <div class="portfolio-card">
+                    <h3>Week 4</h3>
+                    <p>Coming soon.</p>
+                </div>
+
+                <!-- Add Week 5 project link inside this card later -->
+                <div class="portfolio-card">
+                    <h3>Week 5</h3>
+                    <p>Coming soon.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="card contact-links">
+                <a href="mailto:cayla.jordan04@gmail.com">cayla.jordan04@gmail.com</a>
+                <a href="https://www.linkedin.com/in/cayla-jordan-3b4b7b316/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Cayla Jordan</p>
+    </footer>
+
+</body>
+</html>
