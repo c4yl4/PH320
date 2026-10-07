@@ -1,81 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cross-Sectional Study</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross-Sectional Study</title>
 
-<style>
-:root {
-    --text: #1f2937;
-    --muted: #6b7280;
-    --border: #e5e7eb;
-    --background: #fafafa;
-    --paper: #ffffff;
-    --accent: #ec4899;
-}
+    <style>
+        :root {
+            --text: #1f2937;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --background: #fafafa;
+            --paper: #ffffff;
+            --accent: #ec4899;
+        }
 
-* {
-    box-sizing: border-box;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-body {
-    margin: 0;
-    padding: 4rem 1.5rem;
-    background: var(--background);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 Roboto, Helvetica, Arial, sans-serif;
-    color: var(--text);
-    line-height: 1.9;
-}
+        body {
+            margin: 0;
+            padding: 4rem 1.5rem;
+            background: var(--background);
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            line-height: 1.9;
+        }
 
-article {
-    max-width: 700px;
-    margin: 0 auto;
-    background: var(--paper);
-    padding: 3.5rem;
-    border-radius: 16px;
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.04),
-        0 1px 3px rgba(0,0,0,0.08);
-}
+        article {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--paper);
+            padding: 3.5rem;
+            border-radius: 16px;
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.04),
+                0 1px 3px rgba(0,0,0,0.08);
+        }
 
-h1 {
-    margin: 0 0 2.5rem;
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.03em;
-    color: var(--text);
-    position: relative;
-}
+        h1 {
+            margin: 0 0 2.5rem;
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            position: relative;
+        }
 
-h1::after {
-    content: "";
-    display: block;
-    width: 70px;
-    height: 4px;
-    background: var(--accent);
-    border-radius: 999px;
-    margin-top: 1rem;
-}
+        h1::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 999px;
+            margin-top: 1rem;
+        }
 
-p {
-    margin: 0 0 1.8rem;
-    font-size: 1.08rem;
-}
+        h2 {
+            margin: 2rem 0 1rem;
+            font-size: 1.35rem;
+            color: var(--text);
+        }
 
-p:last-child {
-    margin-bottom: 0;
-}
+        p {
+            margin: 0 0 1.5rem;
+            font-size: 1.08rem;
+            color: var(--text);
+        }
 
-@media (max-width: 768px) {
-    body {
-        padding: 2rem 1rem;
-    }
+        strong {
+            color: var(--text);
+        }
 
-    article {
-        padding: 2rem;
-    }
+        .meta {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
 
-    h
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 2rem 1rem;
+            }
+
+            article {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <h1>Cross-Sectional Study</h1>
+        <p class="meta">PH 320 | Applied Biostatistics in Public Health</p>
+
+        <p><strong>Cross-sectional studies</strong> are observational research designs that analyze data collected at one point in time. They are often used in public health to estimate the prevalence of health conditions, behaviors, or exposures in a population and to identify associations between variables.</p>
+
+        <p>For example, a public health researcher might survey a group of workers to measure both workplace stress and reported symptoms of burnout at the same time. This design allows investigators to examine whether workers with higher stress levels are also more likely to report poor mental health outcomes, even though it cannot prove causation.</p>
+
+        <h2>Why This Design Matters</h2>
+        <p>Cross-sectional studies are useful because they are relatively quick, cost-effective, and efficient for assessing large populations. In public health practice, they help estimate the burden of disease and guide prevention strategies, resource allocation, and policy development.</p>
+
+        <h2>Strengths</h2>
+        <p>One major strength of a cross-sectional study is its ability to capture a snapshot of health and exposure patterns in a community or population. This makes it valuable for identifying trends and generating hypotheses for future research.</p>
+
+        <h2>Limitations</h2>
+        <p>Because the data are collected at a single time, cross-sectional studies cannot determine whether the exposure preceded the outcome or whether a third variable explains the observed relationship. For that reason, the results should be interpreted carefully and often followed by longitudinal or experimental studies.</p>
+
+        <h2>Public Health Application</h2>
+        <p>In occupational health, a cross-sectional study could examine the relationship between long work hours and fatigue among nurses, office staff, or service workers. Findings from such a study can inform workplace wellness programs, scheduling policies, and employee safety interventions.</p>
+
+        <p>Overall, cross-sectional studies provide an important foundation for public health research. They help describe population health patterns and identify relationships that may warrant deeper investigation, while also reminding us that association is not the same as causation.</p>
+
+        <a class="back-link" href="index.html">← Back to portfolio</a>
+    </article>
+</body>
+</html>

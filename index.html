@@ -38,6 +38,93 @@
             padding: 60px 20px;
         }
 
+        .site-nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 24px;
+        }
+
+        .menu {
+            position: relative;
+        }
+
+        .menu summary {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            color: var(--accent);
+            cursor: pointer;
+            font-weight: bold;
+            list-style: none;
+        }
+
+        .menu summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .menu summary:focus-visible,
+        .menu a:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .menu-icon,
+        .menu-icon::before,
+        .menu-icon::after {
+            display: block;
+            width: 20px;
+            height: 2px;
+            border-radius: 2px;
+            background: currentColor;
+        }
+
+        .menu-icon {
+            position: relative;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            position: absolute;
+            left: 0;
+            content: "";
+        }
+
+        .menu-icon::before {
+            top: -6px;
+        }
+
+        .menu-icon::after {
+            top: 6px;
+        }
+
+        .menu-links {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            z-index: 1;
+            min-width: 220px;
+            padding: 8px;
+            border-radius: 10px;
+            background: var(--card);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            list-style: none;
+        }
+
+        .menu-links a {
+            display: block;
+            padding: 10px 12px;
+            border-radius: 6px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .menu-links a:hover {
+            background: var(--secondary);
+        }
+
         .hero {
             display: flex;
             align-items: center;
@@ -172,6 +259,21 @@
 
     <header>
         <div class="container">
+            <nav class="site-nav" aria-label="Main navigation">
+                <details class="menu">
+                    <summary aria-label="Toggle navigation menu">
+                        <span class="menu-icon" aria-hidden="true"></span>
+                        Menu
+                    </summary>
+                    <ul class="menu-links">
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="cross-sectional.html">Week 3: Cross-Sectional Study</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </details>
+            </nav>
             <div class="hero">
                 <div class="hero-text">
                     <h1>Cayla Jordan</h1>
@@ -222,19 +324,16 @@
 
             <div class="portfolio-grid">
 
-                <!-- Add Week 3 project link inside this card later -->
                 <div class="portfolio-card">
                     <h3>Week 3</h3>
-                    <p>Coming soon.</p>
+                    <p><a href="cross-sectional.html">Cross-Sectional Study</a></p>
                 </div>
 
-                <!-- Add Week 4 project link inside this card later -->
                 <div class="portfolio-card">
                     <h3>Week 4</h3>
                     <p>Coming soon.</p>
                 </div>
 
-                <!-- Add Week 5 project link inside this card later -->
                 <div class="portfolio-card">
                     <h3>Week 5</h3>
                     <p>Coming soon.</p>
