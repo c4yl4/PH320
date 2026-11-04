@@ -3,136 +3,459 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Does Your Writing Hand Beat Your Other Hand?</title>
+  <meta name="description" content="A classroom study comparing writing speed between students' writing and other hands.">
+  <meta name="theme-color" content="#fff7fb">
+  <title>Does Your Writing Hand Beat Your Other Hand? | PH 320</title>
   <style>
     :root {
       color-scheme: light;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #1f2933;
-      background: #f7f8fa;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #382d36;
+      background: #fff7fb;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      --ink: #382d36;
+      --muted: #756872;
+      --accent: #a63f78;
+      --accent-dark: #79305a;
+      --pink: #f7dce9;
+      --paper: #fff;
+      --line: #eee2e9;
+      --shadow: 0 18px 50px rgba(90, 43, 69, 0.08);
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      min-width: 320px;
       margin: 0;
       line-height: 1.7;
     }
 
-    nav {
-      border-bottom: 1px solid #d5dbe1;
-      background: #fff;
+    a {
+      color: var(--accent-dark);
     }
 
-    nav ul {
+    a:focus-visible {
+      outline: 3px solid #cf76a2;
+      outline-offset: 4px;
+      border-radius: 3px;
+    }
+
+    .site-header {
+      background:
+        radial-gradient(ellipse at 85% 10%, rgba(255, 255, 255, 0.78), transparent 36%),
+        linear-gradient(135deg, #f8dce9 0%, #fff0f6 55%, #fff7fb 100%);
+      border-bottom: 1px solid #f1dce7;
+    }
+
+    .nav-bar,
+    .hero,
+    main,
+    footer {
+      width: min(100% - 2.5rem, 940px);
+      margin-inline: auto;
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 1.2rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--ink);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 2.35rem;
+      aspect-ratio: 1;
+      place-items: center;
+      border-radius: 0.8rem;
+      background: var(--accent);
+      color: white;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 1rem 1.25rem;
+      gap: 0.45rem;
+      margin: 0;
+      padding: 0;
       list-style: none;
     }
 
-    a {
-      color: #1f5a85;
+    .nav-links a {
+      display: inline-block;
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      color: #634854;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 160ms ease, color 160ms ease;
     }
 
-    main {
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #fff;
-      border: 1px solid #e1e5e9;
-      border-radius: 8px;
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--accent-dark);
+    }
+
+    .hero {
+      padding-block: clamp(3rem, 8vw, 5.8rem) clamp(3rem, 7vw, 4.8rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
 
     h1,
-    h2 {
-      line-height: 1.3;
+    h2,
+    p {
+      margin-top: 0;
     }
 
     h1 {
-      margin-top: 0;
-      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      max-width: 780px;
+      margin-bottom: 1rem;
+      color: #482d3c;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.35rem, 6vw, 4.25rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 1.08;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin-bottom: 1.5rem;
+      color: #65535e;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+
+    .study-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .study-tags li {
+      padding: 0.35rem 0.75rem;
+      border: 1px solid rgba(166, 63, 120, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.58);
+      color: #71465c;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    main {
+      position: relative;
+      margin-top: -1.15rem;
+      margin-bottom: 3rem;
+      padding: clamp(1.4rem, 5vw, 3.4rem);
+      border: 1px solid rgba(238, 226, 233, 0.9);
+      border-radius: 1.35rem;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    section + section {
+      margin-top: 3rem;
+      padding-top: 2.6rem;
+      border-top: 1px solid var(--line);
     }
 
     h2 {
-      margin-top: 2rem;
-      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #482d3c;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      font-size: 0.96rem;
     }
 
     .table-wrap {
       overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      -webkit-overflow-scrolling: touch;
     }
 
     table {
       width: 100%;
+      min-width: 660px;
       border-collapse: collapse;
+      text-align: left;
+    }
+
+    caption {
+      padding: 0.85rem 1rem;
+      background: #fff9fc;
+      color: var(--muted);
+      font-size: 0.84rem;
       text-align: left;
     }
 
     th,
     td {
-      padding: 0.75rem 0.5rem;
-      border-bottom: 1px solid #d5dbe1;
-      vertical-align: top;
+      padding: 0.9rem 0.85rem;
+      border-top: 1px solid var(--line);
+      vertical-align: middle;
     }
 
     th {
-      background: #f1f4f6;
+      background: #fbf2f7;
+      color: #684358;
+      font-size: 0.77rem;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+    }
+
+    tbody tr {
+      transition: background-color 140ms ease;
+    }
+
+    tbody tr:hover {
+      background: #fff9fc;
+    }
+
+    td:first-child {
+      min-width: 245px;
+      color: #51434b;
+      font-size: 0.9rem;
+    }
+
+    td:not(:first-child) {
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    td strong {
+      color: #432d3a;
+      font-weight: 700;
+    }
+
+    .writeups {
+      display: grid;
+      gap: 0.9rem;
+      margin: 1.4rem 0 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: result;
+    }
+
+    .writeups li {
+      position: relative;
+      min-height: 4rem;
+      padding: 1rem 1.2rem 1rem 4rem;
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      background: linear-gradient(110deg, #fffafd, #fff);
+      counter-increment: result;
+    }
+
+    .writeups li::before {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: grid;
+      width: 1.9rem;
+      aspect-ratio: 1;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--pink);
+      color: var(--accent-dark);
+      content: counter(result);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .writeups p {
+      margin: 0;
+      color: #574a52;
+    }
+
+    .plain-words {
+      margin: 1.35rem 0 0;
+      padding: 1.2rem 1.35rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 0.8rem 0.8rem 0;
+      background: #fff4f9;
+      color: #563d4b;
+      font-size: 1.05rem;
+    }
+
+    .plain-words p {
+      margin: 0;
+    }
+
+    .limitations {
+      padding: 1.35rem;
+      border-radius: 0.9rem;
+      background: #faf6f8;
+      color: #62545c;
+    }
+
+    .limitations p {
+      margin: 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 2.5rem;
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
     }
 
     footer {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 0 1.25rem 2rem;
+      padding: 0 0 2.5rem;
+      color: var(--muted);
       text-align: center;
     }
 
     footer small {
       display: block;
-      margin-top: 1rem;
-      color: #52606d;
+      line-height: 1.8;
     }
 
-    @media (max-width: 520px) {
-      main {
-        margin: 1rem 0.75rem;
-        padding: 1.25rem;
+    @media (max-width: 600px) {
+      .nav-bar,
+      .hero,
+      main,
+      footer {
+        width: min(100% - 1.5rem, 940px);
       }
 
-      th,
-      td {
-        padding: 0.6rem 0.35rem;
-        font-size: 0.9rem;
+      .nav-bar {
+        align-items: flex-start;
+      }
+
+      .brand {
+        font-size: 0.85rem;
+      }
+
+      .nav-links {
+        justify-content: flex-end;
+      }
+
+      .nav-links a {
+        padding: 0.45rem 0.6rem;
+        font-size: 0.82rem;
+      }
+
+      main {
+        border-radius: 1rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .nav-bar {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .writeups li {
+        padding-right: 0.9rem;
+        padding-left: 3.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 <body>
-  <nav aria-label="Main navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">PH</span>
+        <span>PH 320 <span aria-hidden="true">·</span> Biostatistics</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <p class="eyebrow">Applied Biostatistics in Public Health</p>
+      <h1>Does Your Writing Hand Beat Your Other Hand?</h1>
+      <p class="hero-description">A classroom comparison of writing speed, hand preference, and the script-writing question.</p>
+      <ul class="study-tags" aria-label="Study details">
+        <li>9 students</li>
+        <li>30-second writing task</li>
+        <li>Three t-tests</li>
+      </ul>
+    </div>
+  </header>
 
   <main>
-    <h1>Does Your Writing Hand Beat Your Other Hand?</h1>
-
-    <section>
+    <section id="methods">
+      <p class="eyebrow">The study</p>
       <h2>What We Did</h2>
       <p>Our class counted how many times each student could write “I am amazing” in 30 seconds using their writing hand and their other hand. We also recorded each student's answer to the question about whether they write in script. We compared the class's writing-hand mean with Dr. Jacques's benchmark count of 8. We used t-tests to compare the benchmark, the yes and no groups, and each student's two hand counts.</p>
     </section>
 
-    <section>
+    <section id="results">
+      <p class="eyebrow">The numbers</p>
       <h2>My Results</h2>
-      <div class="table-wrap">
+      <p class="section-intro">Each count represents how many times a student wrote the phrase during the timed task.</p>
+      <div class="table-wrap" role="region" aria-label="T-test results table" tabindex="0">
         <table>
+          <caption>Class results across the three t-tests</caption>
           <thead>
             <tr>
               <th scope="col">Test</th>
@@ -170,23 +493,32 @@
     </section>
 
     <section>
+      <p class="eyebrow">What the tests suggest</p>
       <h2>The Three Write-Ups</h2>
-      <p>The class writing-hand mean was 1.667 counts below the benchmark. The result gives strong evidence that the class mean differed from the benchmark, in the lower direction.</p>
-      <p>The mean for students who answered yes was 0.150 counts higher than the mean for students who answered no. This is a small observed difference, and the result gives little evidence of a group difference.</p>
-      <p>Students averaged 3.778 more counts with their writing hand than with their other hand. The result gives strong evidence of a difference in the direction of higher writing-hand counts.</p>
+      <ol class="writeups">
+        <li><p>The class writing-hand mean was 1.667 counts below the benchmark. The result gives strong evidence that the class mean differed from the benchmark, in the lower direction.</p></li>
+        <li><p>The mean for students who answered yes was 0.150 counts higher than the mean for students who answered no. This is a small observed difference, and the result gives little evidence of a group difference.</p></li>
+        <li><p>Students averaged 3.778 more counts with their writing hand than with their other hand. The result gives strong evidence of a difference in the direction of higher writing-hand counts.</p></li>
+      </ol>
     </section>
 
     <section>
+      <p class="eyebrow">The takeaway</p>
       <h2>In Plain Words</h2>
-      <p>As a group, students wrote the phrase more often with their writing hand than with their other hand. Their writing-hand average was below the professor's benchmark, while the yes and no groups had very similar averages.</p>
+      <div class="plain-words">
+        <p>As a group, students wrote the phrase more often with their writing hand than with their other hand. Their writing-hand average was below the professor's benchmark, while the yes and no groups had very similar averages.</p>
+      </div>
     </section>
 
     <section>
+      <p class="eyebrow">Looking ahead</p>
       <h2>What I Would Do Differently</h2>
-      <p>This was a small study with only nine students, so the results may not represent other students. The professor's benchmark came from one person, and a single timed count may not capture how someone typically writes. I would include more participants and repeat the timed task to get a more reliable comparison.</p>
+      <div class="limitations">
+        <p>This was a small study with only nine students, so the results may not represent other students. The professor's benchmark came from one person, and a single timed count may not capture how someone typically writes. I would include more participants and repeat the timed task to get a more reliable comparison.</p>
+      </div>
     </section>
 
-    <p><a href="index.html">Home</a></p>
+    <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to home</a>
   </main>
 
   <footer>
