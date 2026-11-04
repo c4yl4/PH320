@@ -3,136 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Does Your Writing Hand Beat Your Other Hand?</title>
-  <style>
-    :root {
-      color-scheme: light;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #1f2933;
-      background: #f7f8fa;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      line-height: 1.7;
-    }
-
-    nav {
-      border-bottom: 1px solid #d5dbe1;
-      background: #fff;
-    }
-
-    nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 1rem 1.25rem;
-      list-style: none;
-    }
-
-    a {
-      color: #1f5a85;
-    }
-
-    main {
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #fff;
-      border: 1px solid #e1e5e9;
-      border-radius: 8px;
-    }
-
-    h1,
-    h2 {
-      line-height: 1.3;
-    }
-
-    h1 {
-      margin-top: 0;
-      font-size: clamp(1.8rem, 5vw, 2.4rem);
-    }
-
-    h2 {
-      margin-top: 2rem;
-      font-size: 1.3rem;
-    }
-
-    .table-wrap {
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    th,
-    td {
-      padding: 0.75rem 0.5rem;
-      border-bottom: 1px solid #d5dbe1;
-      vertical-align: top;
-    }
-
-    th {
-      background: #f1f4f6;
-    }
-
-    footer {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 0 1.25rem 2rem;
-      text-align: center;
-    }
-
-    footer small {
-      display: block;
-      margin-top: 1rem;
-      color: #52606d;
-    }
-
-    @media (max-width: 520px) {
-      main {
-        margin: 1rem 0.75rem;
-        padding: 1.25rem;
-      }
-
-      th,
-      td {
-        padding: 0.6rem 0.35rem;
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+  <meta name="description" content="A classroom study comparing writing speed between students' writing and other hands.">
+  <meta name="theme-color" content="#fff7fb">
+  <title>Does Your Writing Hand Beat Your Other Hand? | PH 320</title>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <nav aria-label="Main navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">PH</span>
+        <span>PH 320 <span aria-hidden="true">·</span> Biostatistics</span>
+      </a>
+      <details class="menu">
+        <summary aria-label="Toggle navigation menu">
+          <span class="menu-icon" aria-hidden="true"></span>
+          Menu
+        </summary>
+        <ul class="menu-links">
+          <li><a href="index.html#about">About Me</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="cross-sectional.html">Week 3: Cross-Sectional Study</a></li>
+          <li><a href="regression.html">Correlation Between Adult Smoking and Mental Distress</a></li>
+          <li><a href="ttest.html">T-test: Does Your Writing Hand Beat Your Other Hand?</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </details>
+    </nav>
 
-  <main>
-    <h1>Does Your Writing Hand Beat Your Other Hand?</h1>
+    <div class="hero">
+      <p class="eyebrow">Applied Biostatistics in Public Health</p>
+      <h1>Does Your Writing Hand Beat Your Other Hand?</h1>
+      <p class="hero-description">A classroom comparison of writing speed, hand preference, and the script-writing question.</p>
+      <ul class="study-tags" aria-label="Study details">
+        <li>9 students</li>
+        <li>30-second writing task</li>
+        <li>Three t-tests</li>
+      </ul>
+    </div>
+  </header>
 
-    <section>
+  <main class="page-main">
+    <section id="methods">
+      <p class="eyebrow">The study</p>
       <h2>What We Did</h2>
       <p>Our class counted how many times each student could write “I am amazing” in 30 seconds using their writing hand and their other hand. We also recorded each student's answer to the question about whether they write in script. We compared the class's writing-hand mean with Dr. Jacques's benchmark count of 8. We used t-tests to compare the benchmark, the yes and no groups, and each student's two hand counts.</p>
     </section>
 
-    <section>
+    <section id="results">
+      <p class="eyebrow">The numbers</p>
       <h2>My Results</h2>
-      <div class="table-wrap">
+      <p class="section-intro">Each count represents how many times a student wrote the phrase during the timed task.</p>
+      <div class="table-wrap" role="region" aria-label="T-test results table" tabindex="0">
         <table>
+          <caption>Class results across the three t-tests</caption>
           <thead>
             <tr>
               <th scope="col">Test</th>
@@ -170,26 +95,35 @@
     </section>
 
     <section>
+      <p class="eyebrow">What the tests suggest</p>
       <h2>The Three Write-Ups</h2>
-      <p>The class writing-hand mean was 1.667 counts below the benchmark. The result gives strong evidence that the class mean differed from the benchmark, in the lower direction.</p>
-      <p>The mean for students who answered yes was 0.150 counts higher than the mean for students who answered no. This is a small observed difference, and the result gives little evidence of a group difference.</p>
-      <p>Students averaged 3.778 more counts with their writing hand than with their other hand. The result gives strong evidence of a difference in the direction of higher writing-hand counts.</p>
+      <ol class="writeups">
+        <li><p>The class writing-hand mean was 1.667 counts below the benchmark. The result gives strong evidence that the class mean differed from the benchmark, in the lower direction.</p></li>
+        <li><p>The mean for students who answered yes was 0.150 counts higher than the mean for students who answered no. This is a small observed difference, and the result gives little evidence of a group difference.</p></li>
+        <li><p>Students averaged 3.778 more counts with their writing hand than with their other hand. The result gives strong evidence of a difference in the direction of higher writing-hand counts.</p></li>
+      </ol>
     </section>
 
     <section>
+      <p class="eyebrow">The takeaway</p>
       <h2>In Plain Words</h2>
-      <p>As a group, students wrote the phrase more often with their writing hand than with their other hand. Their writing-hand average was below the professor's benchmark, while the yes and no groups had very similar averages.</p>
+      <div class="plain-words">
+        <p>As a group, students wrote the phrase more often with their writing hand than with their other hand. Their writing-hand average was below the professor's benchmark, while the yes and no groups had very similar averages.</p>
+      </div>
     </section>
 
     <section>
+      <p class="eyebrow">Looking ahead</p>
       <h2>What I Would Do Differently</h2>
-      <p>This was a small study with only nine students, so the results may not represent other students. The professor's benchmark came from one person, and a single timed count may not capture how someone typically writes. I would include more participants and repeat the timed task to get a more reliable comparison.</p>
+      <div class="limitations">
+        <p>This was a small study with only nine students, so the results may not represent other students. The professor's benchmark came from one person, and a single timed count may not capture how someone typically writes. I would include more participants and repeat the timed task to get a more reliable comparison.</p>
+      </div>
     </section>
 
-    <p><a href="index.html">Home</a></p>
+    <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to home</a>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <small>Public Health Student<br>PH 320 · Applied Biostatistics in Public Health</small>
   </footer>
 </body>

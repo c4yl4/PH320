@@ -2,138 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Correlation Between Adult Smoking and Mental Distress</title>
-    <style>
-        :root {
-            --text: #1f2937;
-            --muted: #6b7280;
-            --background: #fafafa;
-            --paper: #ffffff;
-            --accent: #ec4899;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 4rem 1.5rem;
-            background: var(--background);
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-                         Roboto, Helvetica, Arial, sans-serif;
-            color: var(--text);
-            line-height: 1.8;
-        }
-
-        main {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 3.5rem;
-            background: var(--paper);
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.08);
-        }
-
-        h1 {
-            margin: 0 0 1rem;
-            font-size: 2.4rem;
-            line-height: 1.2;
-            letter-spacing: -0.03em;
-        }
-
-        .meta {
-            margin: 0 0 2.5rem;
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
-
-        h2 {
-            margin: 2rem 0 1rem;
-            font-size: 1.35rem;
-        }
-
-        p {
-            margin: 0 0 1.25rem;
-            font-size: 1.05rem;
-        }
-
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 1.5rem 0;
-        }
-
-        a {
-            color: var(--accent);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        a:focus-visible {
-            outline: 3px solid var(--accent);
-            outline-offset: 3px;
-        }
-
-        footer {
-            margin-top: 3rem;
-            padding-top: 1.25rem;
-            border-top: 1px solid #e5e7eb;
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: inherit;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 1.5rem 1rem;
-            }
-
-            main {
-                padding: 1.75rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff7fb">
+    <title>Correlation Between Adult Smoking and Mental Distress | PH 320</title>
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
-    <main>
-        <article>
+    <header class="site-header">
+        <nav class="nav-bar" aria-label="Main navigation">
+            <a class="brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true">PH</span>
+                <span>PH 320 <span aria-hidden="true">·</span> Biostatistics</span>
+            </a>
+            <details class="menu">
+                <summary aria-label="Toggle navigation menu">
+                    <span class="menu-icon" aria-hidden="true"></span>
+                    Menu
+                </summary>
+                <ul class="menu-links">
+                    <li><a href="index.html#about">About Me</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="cross-sectional.html">Week 3: Cross-Sectional Study</a></li>
+                    <li><a href="regression.html">Correlation Between Adult Smoking and Mental Distress</a></li>
+                    <li><a href="ttest.html">T-test: Does Your Writing Hand Beat Your Other Hand?</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </details>
+        </nav>
+        <div class="hero">
+            <p class="eyebrow">Applied Biostatistics in Public Health</p>
             <h1>Correlation Between Adult Smoking and Mental Distress</h1>
-            <p class="meta">PH 320 · Applied Biostatistics in Public Health</p>
+            <p class="hero-description">A look at the relationship between smoking rates and reported mental distress.</p>
+        </div>
+    </header>
 
-            <section aria-labelledby="key-findings">
+    <main class="page-main">
+        <article>
+            <section class="article-section" aria-labelledby="key-findings">
+                <p class="eyebrow">The numbers</p>
                 <h2 id="key-findings">Key Findings</h2>
                 <p>The correlation coefficient (r = 0.77) indicates a strong positive relationship between smoking and mental distress.</p>
                 <p>For every 1-percentage-point increase in smoking_pct, distress_pct increases by an estimated 0.4912 percentage points.</p>
                 <p>The reported p-value of 0.000 (p &lt; 0.001) is below 0.05, indicating that the association is statistically significant.</p>
-                <img src="table.png" alt="Regression output table">
+                <img class="report-image" src="table.png" alt="Regression output table">
             </section>
 
-            <section aria-labelledby="what-this-means">
+            <section class="article-section" aria-labelledby="what-this-means">
+                <p class="eyebrow">Interpretation</p>
                 <h2 id="what-this-means">What This Means</h2>
                 <p>Areas with higher smoking rates also tend to have higher rates of mental distress. This statistically significant association shows that the two measures are related, but it does not establish that smoking causes mental distress.</p>
             </section>
 
-            <a href="index.html">Home</a>
+            <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to portfolio</a>
         </article>
-
-        <footer>
-            <p>Your Name · PH 320 · Applied Biostatistics in Public Health</p>
-        </footer>
     </main>
+
+    <footer class="site-footer">
+        <small>Public Health Student · PH 320 · Applied Biostatistics in Public Health</small>
+    </footer>
 </body>
 </html>
