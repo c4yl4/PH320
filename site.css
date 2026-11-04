@@ -24,7 +24,6 @@ html {
 }
 
 body {
-  min-width: 320px;
   margin: 0;
   background: #fff7fb;
   color: var(--ink);
@@ -146,8 +145,8 @@ summary:focus-visible {
   right: 0;
   z-index: 2;
   width: max-content;
-  min-width: 230px;
-  max-width: min(340px, calc(100vw - 2rem));
+  min-width: min(230px, calc(100vw - 1.5rem));
+  max-width: min(340px, calc(100vw - 1.5rem));
   margin: 0;
   padding: 0.5rem;
   border: 1px solid var(--line);
@@ -362,6 +361,7 @@ h3 {
   width: fit-content;
   margin-bottom: 0.6rem;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .contact-links a:last-child {
@@ -542,6 +542,22 @@ td strong {
 
   .page-main {
     border-radius: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 9vw, 2.35rem);
+  }
+
+  .menu-links {
+    right: auto;
+    left: 0;
   }
 }
 
