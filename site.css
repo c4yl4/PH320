@@ -419,6 +419,21 @@ p {
   font-size: 1rem;
 }
 
+/* photo version of the badge */
+.portrait {
+  width: 13rem;
+  flex-basis: 13rem;
+  background: var(--petal);
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 /* ---------- Main content ---------- */
 
 .page-main {
@@ -778,6 +793,11 @@ td strong {
 
   .initials-circle::after {
     display: none;
+  }
+
+  .portrait {
+    width: 8.5rem;
+    flex-basis: 8.5rem;
   }
 
   .page-main {
