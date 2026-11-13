@@ -692,6 +692,10 @@ td strong {
   margin: 0;
 }
 
+.writeups p + p {
+  margin-top: 0.4rem;
+}
+
 .plain-words {
   max-width: calc(var(--measure) + 3rem);
   margin: 1.4rem 0 0;
@@ -822,4 +826,8 @@ td strong {
     animation: none !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.writeups + h3 {
+  margin-top: 2rem;
 }

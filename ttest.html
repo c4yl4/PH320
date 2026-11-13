@@ -120,6 +120,59 @@
       </div>
     </section>
 
+    <section id="which-test">
+      <p class="eyebrow">Practice</p>
+      <h2>Which Test Would You Use?</h2>
+      <p class="section-intro">For each scenario, I picked the test I'd use and wrote down the clue that gave it away.</p>
+
+      <ol class="writeups">
+        <li>
+          <p><strong>Blood pressure before and after a six-week program</strong></p>
+          <p><em>Test:</em> Paired t-test.<br>
+          <em>The clue:</em> It's the same patients measured twice, once before and once after. Each person gets compared with themselves.</p>
+        </li>
+
+        <li>
+          <p><strong>Sleep hours: commuters vs. on-campus students</strong></p>
+          <p><em>Test:</em> Independent (two-sample) t-test.<br>
+          <em>The clue:</em> These are two separate groups of students, and nobody is in both. We're comparing the average for one group with the average for the other.</p>
+        </li>
+
+        <li>
+          <p><strong>County birth weight vs. the national average of 7.5 lb</strong></p>
+          <p><em>Test:</em> One-sample t-test.<br>
+          <em>The clue:</em> There's only one group here. Its average gets checked against a set number, the 7.5 lb national figure, instead of against another group.</p>
+        </li>
+
+        <li>
+          <p><strong>Smoking and mental distress across 168 ZIP codes</strong></p>
+          <p><em>Test:</em> Correlation or regression (r, slope and p-value), not a t-test.<br>
+          <em>The clue:</em> Nobody is being split into groups. The question is whether two continuous measures go up together across the same ZIP codes. Even a strong result would only show that they're linked, not that smoking causes distress.</p>
+        </li>
+
+        <li>
+          <p><strong>Resting heart rate in January and again in June</strong></p>
+          <p><em>Test:</em> Paired t-test.<br>
+          <em>The clue:</em> Each member is measured twice, so the January and June numbers belong to the same person and have to stay matched up.</p>
+        </li>
+
+        <li>
+          <p><strong>ER wait times at two different hospitals</strong></p>
+          <p><em>Test:</em> Independent (two-sample) t-test.<br>
+          <em>The clue:</em> Two hospitals, two different sets of patients. We're comparing one hospital's average wait with the other's.</p>
+        </li>
+
+        <li>
+          <p><strong>Health insurance (yes/no) and smoking (yes/no)</strong></p>
+          <p><em>Test:</em> Nothing we've learned yet. This one calls for a chi-square test.<br>
+          <em>The clue:</em> Both variables are yes-or-no answers. There's no average to compare and no continuous measure to correlate.</p>
+        </li>
+      </ol>
+
+      <h3>The Odd One Out</h3>
+      <p>Question 7 is the one I couldn't answer with anything from class so far. A t-test needs a number you can average, and correlation needs two continuous variables. Question 7 only has two yes/no categories, so it needs a different kind of test altogether.</p>
+    </section>
+
     <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to home</a>
   </main>
 
